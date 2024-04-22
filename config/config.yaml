@@ -1,0 +1,2 @@
+email: '^[a-zA-Z0-9.]+@university\.com$'
+password: '^[A-Z][a-zA-Z]{5,}\d{3,}$'

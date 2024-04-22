@@ -1,0 +1,26 @@
+[
+    {
+        "student_id": "000001",
+        "first_name": "Vijay",
+        "last_name": "Vedula",
+        "email": "viju.viju@university.com",
+        "password": "California111",
+        "subjects": [
+            {
+                "subject_id": "875",
+                "mark": 44,
+                "grade": "Z"
+            },
+            {
+                "subject_id": "237",
+                "mark": 37,
+                "grade": "Z"
+            },
+            {
+                "subject_id": "874",
+                "mark": 73,
+                "grade": "C"
+            }
+        ]
+    }
+]
