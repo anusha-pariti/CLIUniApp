@@ -13,16 +13,16 @@ class StudentRepository:
         current_max_id = max((int(student.student_id) for student in self.students), default=0)
         next_id = current_max_id + 1
         while next_id < 1000000:
-            yield f"{next_id:06}"
+            yield f"{next_id:06}" #padding of zeros in the left to create a 6 digit number.
             next_id += 1
 
     def add_student(self, student):
         if any(s.email == student.email for s in self.students):
-            return f"\t{FormatCodes.FAIL}Student {student.first_name} {student.last_name} already exists"
+            return f"\t{FormatCodes.FAIL}Student {student.first_name} already exists"
         student.student_id =  next(self.id_gen)
         self.students.append(student)
         self.save_students()
-        return f"\t{FormatCodes.OKGREEN}Student added successfully"
+        return f"\t{FormatCodes.WARNING}Enrolling Student {student.first_name} "
 
     def get_student(self, student_id):
         student_id = f"{student_id:06}"

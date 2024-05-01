@@ -15,7 +15,7 @@ class FormatCodes:
 
 def main_menu():
     while True:
-        choice = input(f"{FormatCodes.OKBLUE}{FormatCodes.BOLD}University System: (A)dmin, (S)tudent, or X{FormatCodes.ENDC} :").upper()
+        choice = input(f"{FormatCodes.OKCYAN}{FormatCodes.BOLD}University System: (A)dmin, (S)tudent, or X{FormatCodes.ENDC} :").upper()
 
         if choice == 'A':
             admin_menu()

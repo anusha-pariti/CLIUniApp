@@ -8,7 +8,7 @@ from main import FormatCodes
 def register_student():
     print(f"\t{FormatCodes.OKGREEN}Student Sign Up")
     is_valid = False
-    email_id = input(f"\t{FormatCodes.ENDC}Email: ").lower()
+    email_id = input(f"\t{FormatCodes.ENDC}Email: ").lower() #formatcodes.endc is used to changing the default colour to terminal defaults because earlier we used green.
     password = input(f"\t{FormatCodes.ENDC}Password: ")
     if validate_regex(get_value("email"), email_id):
         if (validate_regex(get_value("password"), password)):
@@ -20,11 +20,10 @@ def register_student():
         print(f"\t{FormatCodes.FAIL}Incorrect email or password Format")
     
     if(is_valid):
-        first_name = input(f"\t{FormatCodes.ENDC}First Name: ")
-        last_name = input(f"\t{FormatCodes.ENDC}Last Name: ")
+        first_name = input(f"\t{FormatCodes.ENDC}Name: ")
         repo = StudentRepository()
         student_id = 0 # It will be overwritten inside the function call. 
-        new_student = Student(student_id,first_name,last_name,email_id,password,[])
+        new_student = Student(student_id,first_name,email_id,password,[])
         print(repo.add_student(new_student))
         return
     else: 
@@ -134,7 +133,7 @@ def grade_grouping():
     repo = StudentRepository()
     grade_groups = defaultdict(list)
     for student in repo.students:
-        full_name = f"{student.first_name.capitalize()} {student.last_name.capitalize()}"
+        full_name = f"{student.first_name.capitalize()}"
         for subject in student.subjects:
             student_info = f"{full_name} :: {student.student_id} -- GRADE: {subject.grade} - MARK: {subject.mark}"
             grade_groups[subject.grade].append(student_info)
@@ -149,7 +148,7 @@ def pass_fail_distribution():
     pass_groups = defaultdict(list)
     fail_groups = defaultdict(list)
     for student in repo.students:
-        full_name = f"{student.first_name.capitalize()} {student.last_name.capitalize()}"
+        full_name = f"{student.first_name.capitalize()}"
         for subject in student.subjects:
             student_info = f"{full_name} :: {student.student_id} -- Subject ID: {subject.subject_id} -- GRADE: {subject.grade} - MARK: {subject.mark}"
             if subject.mark >= 50:
@@ -173,5 +172,5 @@ def display_students():
     print(f"\t\t{FormatCodes.WARNING}Student List")
     repo = StudentRepository()
     for student in repo.students:
-        full_name = f"{student.first_name.capitalize()} {student.last_name.capitalize()}"
+        full_name = f"{student.first_name.capitalize()}"
         print(f"\t\t{FormatCodes.ENDC}{full_name} :: {student.student_id} -- Email: {student.email}")

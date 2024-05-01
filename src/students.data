@@ -1,25 +1,42 @@
 [
     {
         "student_id": "000001",
-        "first_name": "Vijay",
-        "last_name": "Vedula",
-        "email": "viju.viju@university.com",
-        "password": "California111",
+        "first_name": "John Smith",
+        "email": "john.smith@university.com",
+        "password": "Abcdef123",
         "subjects": [
             {
-                "subject_id": "875",
-                "mark": 44,
-                "grade": "Z"
-            },
-            {
-                "subject_id": "237",
-                "mark": 37,
-                "grade": "Z"
-            },
-            {
-                "subject_id": "874",
-                "mark": 73,
+                "subject_id": "071",
+                "mark": 66,
                 "grade": "C"
+            },
+            {
+                "subject_id": "072",
+                "mark": 98,
+                "grade": "HD"
+            },
+            {
+                "subject_id": "055",
+                "mark": 75,
+                "grade": "D"
+            }
+        ]
+    },
+    {
+        "student_id": "000002",
+        "first_name": "Abc Def",
+        "email": "abcdef.ai@university.com",
+        "password": "Abcdef123",
+        "subjects": [
+            {
+                "subject_id": "074",
+                "mark": 72,
+                "grade": "C"
+            },
+            {
+                "subject_id": "055",
+                "mark": 28,
+                "grade": "Z"
             }
         ]
     }
